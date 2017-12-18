@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+	<!-- http://www.mybatis.org/generator/index.html -->
+
+	<classPathEntry location="D:\apache-maven-3.3.9\conf\bilin_repos\mysql\mysql-connector-java\5.1.24\mysql-connector-java-5.1.24.jar" />
+
+	<context id="yyworld" targetRuntime="MyBatis3">
+		
+		<plugin type="org.mybatis.generator.plugins.AddLimitOffsetPlugin" />
+		
+		<commentGenerator>
+			<property name="suppressDate" value="false" /> 		
+			<property name="suppressAllComments" value="true" /> 		
+		</commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/dream0?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true"
+                        userId="root" password="201314">
+        </jdbcConnection>
+		<javaModelGenerator targetPackage="com.yy.dream.core.db.domain"
+							targetProject="./src/main/java"/>
+		<sqlMapGenerator targetPackage="com.yy.dream.core.db.sqlmap"
+						 targetProject="./src/main/java"/>
+		<javaClientGenerator targetPackage="com.yy.dream.core.db.mapper"
+							 targetProject="./src/main/java" type="XMLMAPPER"/>
+
+		<table tableName="gift_0" domainObjectName="GiftInfo"
+			   enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+			   enableSelectByExample="false" selectByExampleQueryId="false">
+			<property name="useActualColumnNames" value="false"/>
+		</table>
+	</context>
+</generatorConfiguration>
