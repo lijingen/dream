@@ -1,6 +1,7 @@
 package com.yy.dream.core.db.mapper;
 
-import com.yy.dream.core.db.domain.GiftInfo;
+
+import com.yy.dream.core.api.bean.GiftInfo;
 
 public interface GiftInfoMapper {
     int deleteByPrimaryKey(Long id);

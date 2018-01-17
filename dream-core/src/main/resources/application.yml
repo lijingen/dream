@@ -1,0 +1,21 @@
+server:
+  port: 10209
+
+spring:
+  dream0-datasource:
+    jdbcUrl:  jdbc:mysql://127.0.0.1:3306/dream0?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true
+    username: root
+    password: 201314
+    driver-class-name: com.mysql.jdbc.Driver
+
+  dream1-datasource:
+    jdbcUrl: jdbc:mysql://127.0.0.1:3306/dream1?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true
+    username: root
+    password: 201314
+    driver-class-name: com.mysql.jdbc.Driver
+  mybatis:
+      configuration:
+          map-underscore-to-camel-case: true
+          default-fetch-size: 100
+          default-statement-timeout: 30
+

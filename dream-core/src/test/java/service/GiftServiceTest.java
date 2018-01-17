@@ -1,8 +1,12 @@
 package service;
 
 import com.yy.dream.core.CoreApplication;
-import com.yy.dream.core.db.domain.GiftInfo;
+import com.yy.dream.core.api.bean.GiftInfo;
+import com.yy.dream.core.api.service.IGiftCenterService;
+import com.yy.dream.core.config.mysql.ContextHolder;
+import com.yy.dream.core.config.mysql.DataSourceType;
 import com.yy.dream.core.db.mapper.GiftInfoMapper;
+import com.yy.dream.core.service.impl.GiftCenterServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,28 +22,18 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class GiftServiceTest {
 
     @Autowired
-    GiftInfoMapper giftInfoMapper;
+    IGiftCenterService giftCenterService;
 
     @Test
     public void test() {
-        GiftInfo gift = new GiftInfo();
-        gift.setGiftName("玫瑰花3");
-        gift.setGiftPrice(10);
-        gift.setUid(1237L);
-        try {
-            giftInfoMapper.insert(gift);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        GiftInfo giftInfo=new GiftInfo();
+        giftInfo.setGiftName("aaa");
+        giftInfo.setGiftPrice(11);
+        giftInfo.setUid(12307L);
+        giftCenterService.createGift(giftInfo);
     }
 
     @Test
     public void test2() {
-        try {
-            GiftInfo gift = giftInfoMapper.selectByPrimaryKey(1L);
-            Assert.assertTrue(gift.getId() == 1);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

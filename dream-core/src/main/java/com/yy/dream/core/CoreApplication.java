@@ -11,7 +11,6 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 @EnableAutoConfiguration
 @ComponentScan("com.yy.dream")
-@PropertySource("classpath:project.properties")
 public class CoreApplication {
     public static void main(String[] args) throws Exception {
         try {

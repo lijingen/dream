@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yy.dream.core.db.mapper.GiftInfoMapper" >
-  <resultMap id="BaseResultMap" type="com.yy.dream.core.db.domain.GiftInfo" >
+  <resultMap id="BaseResultMap" type="com.yy.dream.core.api.bean.GiftInfo" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="uid" property="uid" jdbcType="BIGINT" />
     <result column="gift_name" property="giftName" jdbcType="VARCHAR" />
@@ -20,13 +20,13 @@
     delete from gift_${tableSuffix}
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.yy.dream.core.db.domain.GiftInfo" >
+  <insert id="insert" parameterType="com.yy.dream.core.api.bean.GiftInfo" >
     insert into gift_${tableSuffix} (id, uid, gift_name, 
       gift_price)
     values (#{id,jdbcType=BIGINT}, #{uid,jdbcType=BIGINT}, #{giftName,jdbcType=VARCHAR}, 
       #{giftPrice,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.yy.dream.core.db.domain.GiftInfo" >
+  <insert id="insertSelective" parameterType="com.yy.dream.core.api.bean.GiftInfo" >
     insert into gift_${tableSuffix}
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -57,7 +57,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.yy.dream.core.db.domain.GiftInfo" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.yy.dream.core.api.bean.GiftInfo" >
     update gift_${tableSuffix}
     <set >
       <if test="uid != null" >
@@ -72,7 +72,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.yy.dream.core.db.domain.GiftInfo" >
+  <update id="updateByPrimaryKey" parameterType="com.yy.dream.core.api.bean.GiftInfo" >
     update gift_${tableSuffix}
     set uid = #{uid,jdbcType=BIGINT},
       gift_name = #{giftName,jdbcType=VARCHAR},

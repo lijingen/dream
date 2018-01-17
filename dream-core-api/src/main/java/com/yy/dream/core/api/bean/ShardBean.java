@@ -1,4 +1,4 @@
-package com.yy.dream.core.db;
+package com.yy.dream.core.api.bean;
 
 /**
  * Created by Administrator on 2017/12/16.

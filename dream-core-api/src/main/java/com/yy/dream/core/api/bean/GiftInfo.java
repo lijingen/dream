@@ -1,7 +1,4 @@
-package com.yy.dream.core.db.domain;
-
-import com.yy.dream.core.db.ShardBean;
-
+package com.yy.dream.core.api.bean;
 public class GiftInfo extends ShardBean{
     private Long id;
 
